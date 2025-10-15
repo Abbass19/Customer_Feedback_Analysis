@@ -34,6 +34,10 @@ def generate_random_feedback():
     ]
     return random.choice(feedback_types)
 
+
+
+# These are good. I take them 0: negative, 1 : positive, 2 neutral
+# We take these as well and make a query
 def analyze_sentiment_simple(text):
     """Simple sentiment analysis"""
     if not text or text.strip() == "":
@@ -54,6 +58,11 @@ def analyze_sentiment_simple(text):
     else:
         return "neutral", round(random.uniform(-0.2, 0.2), 2)
 
+
+
+
+
+# The database query is for both
 def classify_feedback_simple(text):
     """Simple classification"""
     text_lower = text.lower()
@@ -222,6 +231,7 @@ def main():
                 (df_display['Type'].isin(type_filter))
             ]
 
+            # This presentation way, I prefer it to be a  scroll bar.
             st.write(f"Showing {len(filtered_df)} of {len(df_display)} records")
 
             # Display table
@@ -343,3 +353,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    # streamlit run app.py

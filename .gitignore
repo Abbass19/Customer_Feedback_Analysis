@@ -1,11 +1,9 @@
-# -------------------------
 # Python virtual environment
 # -------------------------
 venv/
 *.pyc
 __pycache__/
 
-# -------------------------
 # OS files
 # -------------------------
 .DS_Store
@@ -50,3 +48,6 @@ dnnl.lib
 # -------------------------
 *.log
 *.tmp
+
+# Ignore the huge classification model folder
+Models/Classification_Model/Solution_1_BERT_MultiHead_Classifier/Classification/
