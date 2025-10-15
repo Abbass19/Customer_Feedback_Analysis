@@ -1,0 +1,67 @@
+Prompt:
+
+"Imagine a Windows desktop UI built with Streamlit for a Customer Feedback Analysis application. The interface should be user-friendly and visually organized. Include the following elements:
+
+1. Text Input / Interaction Area:
+
+A large multiline text box for users to enter feedback manually.
+
+A voice input button to record spoken feedback, with a clear mechanism to start and stop recording.
+
+Display the converted voice as text in the same text box.
+
+2. NER / Sentiment / Classification Display:
+
+A panel showing the detected named entities in the text.
+
+Checkboxes or markers to indicate correctness of each detected entity.
+
+Display the sentiment of the feedback (positive, neutral, negative), color-coded.
+
+Display the classification result of the model (e.g., Complaint, Praise, Request, Other).
+
+3. Dataset / Feedback Viewer:
+
+A live table showing all recent feedback records. Each record should display:
+
+Feedback text
+
+Detected entities
+
+Sentiment
+
+Classification result
+
+Include a filter option to sort or filter the table by sentiment, entity, or classification result.
+
+Add a button to export the filtered records to CSV or Excel.
+
+4. Action Buttons:
+
+A Submit button for adding new feedback.
+
+An optional Undo Last Action button to revert mistakes.
+
+5. Notifications / Feedback:
+
+A section for displaying confirmation messages when feedback is successfully added and analyzed.
+
+Display error messages if there is a problem with input or model analysis.
+
+6. Analytics / Visualization Panels:
+
+A pie chart or bar chart showing the distribution of sentiment across feedback.
+
+A bar chart showing the distribution of classification results.
+
+A word cloud or simple chart showing the most frequent entities detected.
+
+Design Style:
+
+Clean, modern, and minimalistic layout.
+
+Use colors to distinguish sentiment and classification results.
+
+Place panels logically so the text input is at the top or left, dataset table in the center/right, and analytics below or on the side.
+
+Generate a visual mockup or detailed description of how the UI would look on a Windows screen, including placement of each element, buttons, and panels."

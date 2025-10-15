@@ -1,0 +1,45 @@
+📊 Evaluation Results
+============================================================
+Pricing
+  Classes: [0, 1, 2, 3]
+  Accuracy: 0.1595
+  Precision (macro): 0.7082
+  Recall (macro): 0.3187
+  F1 (macro): 0.1250
+  mAP: 0.4019
+------------------------------------------------------------
+Appointments
+  Classes: [0, 1, 2, 3]
+  Accuracy: 0.7231
+  Precision (macro): 0.3837
+  Recall (macro): 0.6151
+  F1 (macro): 0.4015
+  mAP: 0.4470
+------------------------------------------------------------
+Medical Staff
+  Classes: [0, 1, 2, 3]
+  Accuracy: 0.6549
+  Precision (macro): 0.5557
+  Recall (macro): 0.6302
+  F1 (macro): 0.5538
+  mAP: 0.6082
+------------------------------------------------------------
+Customer Service
+  Classes: [0, 1, 2, 3]
+  Accuracy: 0.6566
+  Precision (macro): 0.5624
+  Recall (macro): 0.6437
+  F1 (macro): 0.5402
+  mAP: 0.6061
+------------------------------------------------------------
+Emergency Services
+  Classes: [0, 1, 2, 3]
+  Accuracy: 0.6618
+  Precision (macro): 0.3409
+  Recall (macro): 0.4678
+  F1 (macro): 0.3271
+  mAP: 0.3764
+------------------------------------------------------------
+
+Overall Mean F1: 0.3895
+Overall Mean mAP: 0.4879

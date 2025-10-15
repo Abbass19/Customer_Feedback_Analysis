@@ -1,0 +1,52 @@
+# -------------------------
+# Python virtual environment
+# -------------------------
+venv/
+*.pyc
+__pycache__/
+
+# -------------------------
+# OS files
+# -------------------------
+.DS_Store
+Thumbs.db
+
+# -------------------------
+# Git files
+# -------------------------
+.gitignore
+
+# -------------------------
+# Python packages
+# -------------------------
+*.egg-info/
+dist/
+build/
+
+# -------------------------
+# Data / output files
+# -------------------------
+*.xlsx
+*.csv
+*.json
+
+# -------------------------
+# Model / large files
+# -------------------------
+saved_model/
+saved_model_sbert/
+feedback_classifier.pt
+5_Head_Classification_Only.pt
+model.safetensors
+
+# -------------------------
+# Torch / PyTorch files
+# -------------------------
+torch_cpu.dll
+dnnl.lib
+
+# -------------------------
+# Temporary / cache
+# -------------------------
+*.log
+*.tmp

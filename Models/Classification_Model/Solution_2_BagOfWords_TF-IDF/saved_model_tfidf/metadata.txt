@@ -1,0 +1,4 @@
+TF-IDF MultiOutput model
+Saved at: 2025-10-14T16:46:37.196323 UTC
+Aspect names: ['Pricing', 'Appointments', 'Medical Staff', 'Customer Service', 'Emergency Services']
+Vectorizer max_features: 20000

@@ -1,0 +1,40 @@
+📊 Evaluation Results
+==================================================
+Pricing
+  Accuracy: 0.9407
+  Precision: 0.6012
+  Recall: 0.4532
+  F1-score: 0.5006
+  mAP: 0.5218
+--------------------------------------------------
+Appointments
+  Accuracy: 0.9007
+  Precision: 0.5848
+  Recall: 0.4592
+  F1-score: 0.4989
+  mAP: 0.5159
+--------------------------------------------------
+Medical Staff
+  Accuracy: 0.7544
+  Precision: 0.6846
+  Recall: 0.6122
+  F1-score: 0.6350
+  mAP: 0.6772
+--------------------------------------------------
+Customer Service
+  Accuracy: 0.7542
+  Precision: 0.6386
+  Recall: 0.5985
+  F1-score: 0.6082
+  mAP: 0.6467
+--------------------------------------------------
+Emergency Services
+  Accuracy: 0.9298
+  Precision: 0.5945
+  Recall: 0.4102
+  F1-score: 0.4611
+  mAP: 0.4906
+--------------------------------------------------
+
+Overall Mean F1: 0.5408
+Overall Mean mAP: 0.5705
