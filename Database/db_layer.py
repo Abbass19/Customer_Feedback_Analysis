@@ -14,7 +14,7 @@ def get_connection():
     )
 
 # ----- 2. Insert function -----
-def DB_ADD_Record(feedback_text: str,
+def db_add_record(feedback_text: str,
                   sentiment_scores: Dict[str, Optional[int]],
                   ner_values: Dict[str, Optional[str]]):
     """
@@ -93,9 +93,7 @@ def DB_ADD_Record(feedback_text: str,
     finally:
         conn.close()
 
-
-
-def get_all_feedback(limit: Optional[int] = None) -> List[Dict]:
+def db_get_records(limit: Optional[int] = None) -> List[Dict]:
     """
     Returns all feedback records from the hospital_feedback table.
     Optional limit to avoid huge responses.
@@ -117,7 +115,7 @@ def get_all_feedback(limit: Optional[int] = None) -> List[Dict]:
     return results
 
 # ----- 3. Retrieve feedback by ID -----
-def get_feedback_by_id(record_id: int) -> Optional[Dict]:
+def db_get_by_id(record_id: int) -> Optional[Dict]:
     """
     Returns a single feedback record by its ID.
     """
@@ -138,7 +136,7 @@ def get_feedback_by_id(record_id: int) -> Optional[Dict]:
         conn.close()
 
 # Returns records where the specified NER fields (indices 0–12) are not null.
-def get_records_with_ner(selected_indices: List[int]) -> List[Dict[str, Any]]:
+def db_get_with_NER(selected_indices: List[int]) -> List[Dict[str, Any]]:
     NER_COLUMNS = [
         "doctor_name",
         "staff_role",
@@ -183,12 +181,12 @@ def get_records_with_ner(selected_indices: List[int]) -> List[Dict[str, Any]]:
     return results
 
 # Returns records matching only the specified sentiment values for the given sentiment columns
-def get_records_with_sentiment(sentiment_filter: Dict[str, List[int]]) -> List[Dict[str, Any]]:
+def db_get_with_sentiment(sentiment_filter: Dict[str, List[int]]) -> List[Dict[str, Any]]:
     """
     Return records filtered by the specified sentiment values.
 
-    :param sentiment_filter: dict where key is a sentiment column name and value is a list of allowed integers (0-3)
-                             e.g., {"sentiment_pricing": [2,3], "sentiment_staff": [1,2]}
+    :param sentiment_filter: dict where key is a sentiment column name and value is a list of allowed integers (0-2)
+                             e.g., {"sentiment_pricing": [0,1], "sentiment_staff": [2]}
     :return: list of dicts representing the records
     """
     SENTIMENT_COLUMNS = [
@@ -199,26 +197,46 @@ def get_records_with_sentiment(sentiment_filter: Dict[str, List[int]]) -> List[D
         "sentiment_emergency_services"
     ]
 
-    # Filter only valid columns
-    valid_filter = {k: v for k, v in sentiment_filter.items() if k in SENTIMENT_COLUMNS and v}
-    if not valid_filter:
-        return []  # no valid filter provided
-
-    # Build SQL WHERE clause
-    conditions = [f"{col} IN %s" for col in valid_filter.keys()]
-    where_clause = " AND ".join(conditions)
-    query = f"""
-        SELECT id, {', '.join(SENTIMENT_COLUMNS)}, feedback_text, created_at
-        FROM hospital_feedback
-        WHERE {where_clause}
-        ORDER BY created_at DESC;
-    """
-
     conn = get_connection()
     results = []
+
     try:
         with conn.cursor() as cur:
-            cur.execute(query, tuple([tuple(vals) for vals in valid_filter.values()]))
+            # If no filter is provided, return all records
+            if not sentiment_filter:
+                query = f"""
+                    SELECT id, {', '.join(SENTIMENT_COLUMNS)}, feedback_text, created_at
+                    FROM hospital_feedback
+                    ORDER BY created_at DESC;
+                """
+                cur.execute(query)
+            else:
+                # Build OR conditions per column
+                conditions = []
+                values = []
+                for col, allowed in sentiment_filter.items():
+                    if allowed:
+                        conditions.append(f"{col} = ANY(%s)")
+                        values.append(allowed)
+
+                if not conditions:
+                    # fallback: no valid conditions, return all
+                    query = f"""
+                        SELECT id, {', '.join(SENTIMENT_COLUMNS)}, feedback_text, created_at
+                        FROM hospital_feedback
+                        ORDER BY created_at DESC;
+                    """
+                    cur.execute(query)
+                else:
+                    where_clause = " OR ".join(conditions)
+                    query = f"""
+                        SELECT id, {', '.join(SENTIMENT_COLUMNS)}, feedback_text, created_at
+                        FROM hospital_feedback
+                        WHERE {where_clause}
+                        ORDER BY created_at DESC;
+                    """
+                    cur.execute(query, tuple(values))
+
             rows = cur.fetchall()
             colnames = [desc[0] for desc in cur.description]
             for row in rows:
@@ -227,9 +245,8 @@ def get_records_with_sentiment(sentiment_filter: Dict[str, List[int]]) -> List[D
         conn.close()
 
     return results
-
 # Delete a single record by its ID
-def delete_record_by_id(record_id: int) -> bool:
+def db_delete_with_ID(record_id: int) -> bool:
     """Delete a single record from hospital_feedback by ID."""
     query = "DELETE FROM hospital_feedback WHERE id = %s;"
     conn = get_connection()
@@ -246,7 +263,7 @@ def delete_record_by_id(record_id: int) -> bool:
         conn.close()
 
 # Delete all records in the table
-def clear_all_records() -> bool:
+def db_clear_records() -> bool:
     """Delete all records from hospital_feedback."""
     query = "TRUNCATE TABLE hospital_feedback RESTART IDENTITY;"
     conn = get_connection()
@@ -263,7 +280,7 @@ def clear_all_records() -> bool:
         conn.close()
 
 # ----- Print schema function -----
-def print_table_schema(table_name: str):
+def print_table_schema(table_name="hospital_feedback"):
     """
     Prints the schema (columns and types) of the given table.
     """
@@ -286,26 +303,5 @@ def print_table_schema(table_name: str):
 
 
 
-if __name__ == "__main__":
-    # print_table_schema("hospital_feedback")
-    # print(get_feedback_by_id(1))
-    # print(get_all_feedback())
-
-    # Get records with doctor_name and hospital_name not null
-    # records = get_records_with_ner([0,1])
-    # for rec in records:
-    #     print(rec)
-
-    # filter_dict = {
-    #     "sentiment_staff": [1],
-    #     "sentiment_customer_service": [1]
-    # }
-    #
-    # records = get_records_with_sentiment(filter_dict)
-    # for r in records:
-    #     print(r)
-    #
-    #
-    delete_record_by_id(6)
 
 
