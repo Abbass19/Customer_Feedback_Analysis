@@ -1,0 +1,47 @@
+Our Mission:
+    I have a streamlit UI app code that is not working
+    Is composed of 2 things, understanding the UI itself. And the other thing is making that UI work
+    with the API functions we have exposed and the models we have trained and modularized.
+
+Explanation of the Aimed Workflow:
+    We Have many elements. I will count them and explain how they interact with functions and call them.
+    The UI elements are:
+        A. On the left side: Text Box, Add Bottom, Play Bottom, Stop Bottom, NER bottom
+        B. On the right side: 2 Filtering Panels, Refresh Bottom, Download CSV bottom, Clear All bottom
+    The Roles of each One:
+        1. Text Box: Allows to write inside.
+        2. Add Bottom: When clicked the text inside textbox, goes to API function called add (api_add) where
+            the data is analyzed and added to the dataset
+        3. Play Bottom: When clicked, the app should record sound
+        4. Stop Bottom: When Clicked, the app should stop recording and change sound track to text and
+            present that in the text box
+        5. NER Bottom: When clicked, data inside text should undergo the NER model and the data we get
+            gets presented in the right boxes.
+        6. Filtering Panels: When some tag is chosen, the tags data is entered into the query to instantly retrieve data.
+            The query function is
+
+The Status:
+     we are in, we have good functions in the database side and in the API and in the models side as well.
+     So this is good. The functions are modularized, named in a good way.
+     However the app code is nuts.
+     Problems inside the APP:
+        1. Deleted functions: We have uses and calls of non-existing functions, functions that have been deleted.
+        We have to replace those functions with what we have in the API and models.
+        2. I did some modularization for the code. The same functions were wrapped in different names to look better.
+        (Classification_Sentiment_Array --> ai_classifier) (transcribe_audio --> ai_stt) (extract_entities_array --> ai_ner)
+        3. The Bottoms, when clicked make trouble and problems. They are not working.
+        4. The Audio Play Bottom and Stop Bottom is not working as well. The track is to be saved in wav extension
+        And the model understands mp3.
+        5. I don't know streamlit.
+
+The Procedure:
+    1. I will show you the essentials. (Database scheme, Database functions, API functions, AI functions)
+    2. I will show you the whole code once. To detect the problems. To detect the deleted functions you have to replace.
+    3. I will be passing for you snippets of code for each part. You have to correct them and give me a code that
+        fully replaces the old one and does the needed job. You have to inform me of any details.
+    4. At the end I will we will start troubleshooting together. One time after the other.
+
+Notes:
+    1. You can be fully informative
+    2. You don't need to change the shape of the UI. I am satisfied with it. You mission is to use the backend functions
+        and ai functions to make things work that is all.
