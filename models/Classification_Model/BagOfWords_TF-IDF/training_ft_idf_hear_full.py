@@ -61,7 +61,7 @@ if not os.path.exists(DATA_PATH):
 
 df = pd.read_csv(DATA_PATH, encoding='utf-8')
 # Basic sanity check
-print("Dataset shape:", df.shape)
+print("dataset shape:", df.shape)
 print("Columns:", df.columns.tolist())
 # Expected columns: "Review Text", "Pricing", "Appointments", "Medical Staff", "Customer Service", "Emergency Services"
 aspect_names = ["Pricing", "Appointments", "Medical Staff", "Customer Service", "Emergency Services"]

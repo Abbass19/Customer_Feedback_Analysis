@@ -3,7 +3,7 @@ from psycopg2 import sql
 from typing import Optional, Dict, List, Any
 
 
-# ----- 1. Database connection -----
+# ----- 1. database connection -----
 def get_connection():
     return psycopg2.connect(
         host="localhost",

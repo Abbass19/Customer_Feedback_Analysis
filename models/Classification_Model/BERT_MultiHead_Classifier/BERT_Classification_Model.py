@@ -69,3 +69,5 @@ if __name__ == "__main__":
     example_text = "المستشفى مستشفى رائع، الخدمة عظيمة جدا وممتازة ولكن السعر غالي جدا. الخدمة العاجلة سريعة جدا وممتازة. الطاقم الطبي ممتاز"
     result = Classification_Sentiment_Array(example_text)
     print(result)
+
+

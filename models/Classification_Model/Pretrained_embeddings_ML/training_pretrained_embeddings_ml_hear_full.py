@@ -38,7 +38,7 @@ test_embeddings = embedder.encode(texts_test, batch_size=16, show_progress_bar=T
 labels_train_array = np.array(labels_train)
 labels_test_array = np.array(labels_test)
 
-# 6️⃣ Dataset Class (optional for ML, here just for structure)
+# 6️⃣ dataset Class (optional for ML, here just for structure)
 class FeedbackDataset:
     def __init__(self, embeddings, labels):
         self.embeddings = embeddings

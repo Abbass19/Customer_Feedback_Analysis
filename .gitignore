@@ -50,4 +50,4 @@ dnnl.lib
 *.tmp
 
 # Ignore the huge classification model folder
-Models/Classification_Model/Solution_1_BERT_MultiHead_Classifier/Classification/
+models/Classification_Model/BERT_MultiHead_Classifier/Classification/

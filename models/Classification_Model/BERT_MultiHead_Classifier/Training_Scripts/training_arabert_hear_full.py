@@ -13,7 +13,7 @@ Original file is located at
 #   3.  Split trian and test
 #   4.  Tokenizing the input text
 #   5.  Converting Labels to tensors
-#   6.  Dataset Class
+#   6.  dataset Class
 #   7.  Model Definition (Each Head has )
 #   8.  Training Setup
 #   9.  Training Loop
@@ -51,7 +51,7 @@ test_encodings = tokenizer(texts_test, truncation=True, padding=True, return_ten
 labels_train_tensor = torch.tensor(labels_train, dtype=torch.long)  # note dtype long for CrossEntropy
 labels_test_tensor = torch.tensor(labels_test, dtype=torch.long)
 
-# 6️⃣ Dataset class
+# 6️⃣ dataset class
 class FeedbackDataset(Dataset):
     def __init__(self, encodings, labels):
         self.encodings = encodings

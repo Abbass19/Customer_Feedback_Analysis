@@ -1,6 +1,8 @@
 import transformers
 import sentence_transformers
 import torch
+import time
+
 
 print(transformers.__version__)
 print(sentence_transformers.__version__)
@@ -66,3 +68,36 @@ for review in examples:
     print(f"Review: {review}")
     print(f"Prediction: {prediction}")
     print("-" * 60)
+
+
+
+
+#Time tested examples
+reviews = [
+    "الأسعار مرتفعة جدًا مقارنة بالخدمة المقدمة.",  # Pricing negative
+    "المواعيد دقيقة والتنظيم ممتاز داخل المستشفى.",  # Appointments positive
+    "الطاقم الطبي محترف جدًا ويتعامل بلطف مع المرضى.",  # Medical Staff positive
+    "خدمة العملاء بطيئة ولا ترد على الاتصالات.",  # Customer Service negative
+    "قسم الطوارئ سريع جدًا والاستجابة فورية.",  # Emergency positive
+    "المستشفى نظيف لكن الأسعار مبالغ فيها.",  # Mixed: good hygiene, bad pricing
+    "الموظفون في الاستقبال غير متعاونين إطلاقًا.",  # Customer Service negative
+    "الأطباء يشرحون الحالة بشكل واضح ويساعدون المريض على فهم العلاج.",  # Medical Staff positive
+    "المواعيد تتأخر دائمًا ولا يوجد احترام للوقت.",  # Appointments negative
+    "خدمة الطوارئ بطيئة جدًا ولا توجد متابعة جيدة للحالات."  # Emergency negative
+]
+
+# Start timing
+start_time = time.time()
+
+for i, review in enumerate(reviews, 1):
+    prediction = predict_review(review)
+    print(f"{i}. Review: {review}")
+    print(f"Prediction: {prediction}")
+    print("-" * 60)
+
+# End timing
+end_time = time.time()
+elapsed = end_time - start_time
+
+print(f"🕓 Total inference time for {len(reviews)} reviews: {elapsed:.3f} seconds")
+print(f"⏱️ Average time per review: {elapsed / len(reviews):.3f} seconds")

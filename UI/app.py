@@ -1,11 +1,11 @@
-from Database.API_database import api_add,api_query,api_df_from_records,api_sentiment_distribution,api_classification_distribution
-from Database.database import db_get_records
+from database.app_api import api_add,api_query,api_df_from_records,api_sentiment_distribution,api_classification_distribution
+from database.db_layer import db_get_records
 
 import streamlit as st
 import pandas as pd
 import whisper
 import tempfile
-from Models.ai_api import ai_classifier,ai_ner,ai_stt
+from models.ai_api import ai_classifier,ai_ner,ai_stt
 from pydub import AudioSegment
 import unicodedata
 import plotly.graph_objects as go
@@ -24,22 +24,12 @@ def main():
     NER_COLUMNS = ["doctor_name","staff_role","hospital_name","department","specialty","service_area","price","time_expression","location","quality_aspect","issue_type","treatment_type"]
 
     # Initialize session state stores
-    if "records" not in st.session_state:
-        st.session_state["records"] = []
     if "feedback_text" not in st.session_state:
         st.session_state["feedback_text"] = ""
-    if "recording" not in st.session_state:
-        st.session_state["recording"] = False
-    if "last_audio_bytes" not in st.session_state:
-        st.session_state["last_audio_bytes"] = None
     if "ner_results" not in st.session_state:
         st.session_state["ner_results"] = {k: "" for k in NER_COLUMNS}
-    if "last_sentiment_scores" not in st.session_state:
-        st.session_state["last_sentiment_scores"] = None
     if "update_stats" not in st.session_state:
         st.session_state["update_stats"] = False
-    if "transcribed" not in st.session_state:
-        st.session_state.transcribed = False
     if "textbox_key" not in st.session_state:
         st.session_state.textbox_key = 0
     if "show_success" not in st.session_state:
@@ -265,16 +255,6 @@ def main():
                 selected_classes = st.multiselect(
                     "Classification", options=classification_options, default=classification_options
                 )
-
-            records = api_query(selected_sentiments, selected_classes)
-            print(f"For the conditions chosen ")
-            print(f"Classification Options : {classification_options}")
-            print(f"Selected Classes : {selected_classes}")
-            print(f"The number of records being selected is {len(records)}")
-            print(f"Although all the records are {len(db_get_records())}")
-
-
-
             refresh_col, download_col, clear_col = st.columns([1, 1, 1])
 
             with refresh_col:

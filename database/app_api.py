@@ -1,7 +1,7 @@
 from typing_extensions import Counter
 
-from Database.database import db_add_record, db_get_with_sentiment,db_clear_records
-from Models.ai_api import ai_ner,ai_stt,ai_classifier
+from database.db_layer import db_add_record, db_get_with_sentiment,db_clear_records
+from models.ai_api import ai_ner,ai_stt,ai_classifier
 import pandas as pd
 from typing import List, Dict, Any
 

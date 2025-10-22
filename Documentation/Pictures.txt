@@ -1,0 +1,14 @@
+These Pictures are in the Documentation Folder 
+
+
+Bert_Classifier_Model_Class.PNG (Code)
+Entity-Relationship Diagram.PNG
+Modules.PNG (Showing the API and modules)
+Project_Structure.PNG (Showing Files and Directories)
+Model_Comparison.PNG
+Multi_Head_BERT_Based_Classifier.PNG (Metrics)
+Pretrained_Embeddings_ML.PNG (Metrics)
+TF_IDF_Classifier.PNG (Metrics)
+TF-IDF Function.PNG (Code)
+UI.PNG
+Wisper_Model.PNG (Metrics)

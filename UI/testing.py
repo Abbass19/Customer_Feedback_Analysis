@@ -1,4 +1,4 @@
-from Models.ai_api import ai_classifier,ai_ner,ai_stt
+from models.ai_api import ai_classifier,ai_ner,ai_stt
 
 import warnings
 import transformers
@@ -22,5 +22,17 @@ Feedback = "صراحه اعجز وصفي عن الدكتور حسام محمد �
 # print(f"STT Model Worked :) ")
 
 
-feedback_text = "اشكر ادارة مستشفى الدكتور سليمان الحبيب فرع الريان وشكر اي للاستاذ نايف السويحل لخدمتي وحل مشكلتي"
-print(ai_ner(feedback_text))
+# feedback_text = "اشكر ادارة مستشفى الدكتور سليمان الحبيب فرع الريان وشكر اي للاستاذ نايف السويحل لخدمتي وحل مشكلتي"
+# print(ai_ner(feedback_text))
+#
+# another_one = "صراحه اعجز وصفي عن الدكتور حسام محمد هاجرس دكتور ممتاز ويده خفيفه وشغله صدق صدق جبار تقييمه فوق التقيييم الله يوفقه ( اسنان واعصاب )"
+
+
+
+print(ai_classifier(Feedback))
+print("Classifier Model Worked !!!")
+print(ai_ner(Feedback))
+print("NER Model Worked !!!")
+print(ai_stt("1.mp3"))
+print(f"STT Model Worked :) ")
+

@@ -45,7 +45,7 @@ def transcribe_audio_file(audio_path):
 # ---------------- Evaluation ----------------
 def evaluate_whisper_on_HEAR():
     # Absolute path to your dataset folder
-    folder_path = r"C:\Users\Abbass Zahreddine\Documents\GitHub\Customer_Feedback_Analysis\Models\STT_Models\Wisper\Audio_Dataset_First_20"
+    folder_path = r"/models\STT_Models\Wisper\Audio_Dataset_First_20"
     csv_file = os.path.join(folder_path, "HEAR_Dataset.csv")
 
     if not os.path.exists(csv_file):

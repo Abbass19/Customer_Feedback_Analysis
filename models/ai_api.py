@@ -1,5 +1,5 @@
-from Models.Classification_Model.Solution_1_BERT_MultiHead_Classifier.Classification_Sentiment_Analysis.BERT_Classification_Model import Classification_Sentiment_Array
-from Models.NER_Model.GLiNER_NER_Model import extract_entities_dict
+from models.Classification_Model.BERT_MultiHead_Classifier.BERT_Classification_Model import Classification_Sentiment_Array
+from models.NER_Model.GLiNER.GLiNER_NER_Model import extract_entities_dict
 import whisper
 
 import warnings
