@@ -34,6 +34,7 @@ This project captures real-world patient experiences in Saudi hospitals. Using c
 ## Dataset
 
 **HEAR Dataset**: ~30,000 Arabic patient feedback records collected from surveys, online reviews, and hospital forms.  
+
 - **Fields**: Feedback text, hospital, department, doctor, aspect-level sentiment scores (0: Positive, 1: Negative, 2: Neutral, 3: Not Mentioned).  
 - **Tasks**: Aspect-based sentiment analysis and multi-aspect classification simultaneously.
 
@@ -51,8 +52,9 @@ The backend is modular:
 - **app_api**: Connects the UI with both db_layer and ai_api.  
 
 **Visualizations**:  
-- Modules Diagram: `Documentation/Modules.PNG`  
-- Database Schema: `Documentation/Entity-Relationship Diagram.PNG`  
+
+![Modules Diagram](Documentation/Modules.PNG)  
+![Database Schema](Documentation/Entity-Relationship Diagram.PNG)  
 
 ---
 
@@ -73,22 +75,34 @@ The backend is modular:
 | Customer Service  | 0.82    | 0.74      | 0.69   | 0.71     | 0.76 |
 | Emergency Services| 0.97    | 0.66      | 0.63   | 0.64     | 0.67 |
 
-*Other classification models:*  
-- TF-IDF Classifier (`Documentation/TF-IDF_Function.PNG`)  
-- Pretrained Embeddings ML (`Documentation/Pretrained_Embeddings_ML.PNG`)  
+**Other classification models**:
+
+![TF-IDF Classifier](Documentation/TF_IDF_Classifier.PNG)  
+![Pretrained Embeddings ML](Documentation/Pretrained_Embeddings_ML.PNG)  
 
 > BERT-based model chosen for best performance, despite longer training time.
 
+![Model Comparison](Documentation/Model_Comparison.PNG)  
+![Multi-Head BERT Metrics](Documentation/Multi_Head_BERT_Based_Classifier.PNG)  
+
+---
+
 ### NER Model
 
-- **Model**: GLiNER (`Documentation/Bert_Classifier_Model_Class.PNG`)  
+- **Model**: GLiNER  
 - Used for extracting entities, but not fully tested yet.  
+
+![NER Model](Documentation/Bert_Classifier_Model_Class.PNG)  
+
+---
 
 ### STT Model
 
-- **Model**: Whisper (`Documentation/Wisper_Model.PNG`)  
+- **Model**: Whisper  
 - Tested with 20 Arabic audio recordings.  
 - Performs well on clear Arabic speech; accuracy decreases with noise or dialectal variation.
+
+![Whisper Model](Documentation/Wisper_Model.PNG)  
 
 ---
 
@@ -96,10 +110,10 @@ The backend is modular:
 
 - **Core modules**: `db_layer`, `ai_api`, `app_api`  
 - **Scripts**: Training, testing, and evaluation scripts are included.  
-- **UI**: User interface connects to API (`Documentation/UI.PNG`).  
+- **UI**: User interface connects to API.  
 
-**Visual Overview**:  
-- `Documentation/Project_Structure.PNG`  
+![UI](Documentation/UI.PNG)  
+![Project Structure](Documentation/Project_Structure.PNG)  
 
 ---
 
