@@ -1,9 +1,6 @@
-# Full exhaustive requirements (expanded version)
-streamlit==1.50.0
-streamlit-webrtc==0.63.11
-
 aioice==0.10.1
 aiortc==1.14.0
+# Editable install with no version control (Al-Rassoul-Feedback-Classification==0.1)
 altair==5.5.0
 annotated-types==0.7.0
 astroid==4.0.1
@@ -30,6 +27,7 @@ cymem==2.0.11
 dill==0.4.0
 dnspython==2.8.0
 et_xmlfile==2.0.0
+ffmpeg-python==0.2.0
 filelock==3.20.0
 flatbuffers==25.9.23
 fonttools==4.60.1
@@ -42,7 +40,7 @@ gliner==0.2.22
 google-crc32c==1.7.1
 graphviz==0.21
 hf-xet==1.1.10
-huggingface-hub==0.23.3
+huggingface-hub>=0.21.4
 humanfriendly==10.0
 idna==3.11
 ifaddr==0.2.0
@@ -66,9 +64,11 @@ mpmath==1.3.0
 murmurhash==1.0.13
 narwhals==2.8.0
 networkx==3.4.2
+nltk==3.9.2
 numba==0.62.1
-numpy>=2.0.0
+numpy==1.26.4
 onnxruntime==1.23.1
+openai-whisper==20250625
 openpyxl==3.1.5
 packaging==25.0
 pandas==2.3.3
@@ -92,7 +92,8 @@ pylint==4.0.1
 pymongo==4.15.3
 pyOpenSSL==25.3.0
 pyparsing==3.2.5
-python-dateutil==2.9.2
+pyreadline3==3.5.4
+python-dateutil==2.9.0.post0
 pytz==2025.2
 PyYAML==6.0.3
 referencing==0.37.0
@@ -104,16 +105,23 @@ safetensors==0.6.2
 scikit-learn==1.6.1
 scipy==1.15.3
 seaborn==0.13.2
+sentence-transformers==5.1.1
 sentencepiece==0.2.1
 shellingham==1.5.4
 six==1.17.0
+sklearn==0.0
 smart_open==7.3.1
 smmap==5.0.2
 soundfile==0.13.1
+spacy==3.8.7
+spacy-legacy==3.0.12
 spacy-loggers==1.0.5
 srsly==2.5.1
+streamlit==1.50.0
+streamlit-webrtc==0.63.11
 sympy==1.14.0
 tenacity==9.1.2
+textblob==0.19.0
 thinc==8.3.6
 threadpoolctl==3.6.0
 tiktoken==0.12.0
@@ -121,8 +129,10 @@ tokenizers==0.14.1
 toml==0.10.2
 tomli==2.3.0
 tomlkit==0.13.3
+torch==2.8.0
 tornado==6.5.2
 tqdm==4.67.1
+transformers==4.35.0
 typer==0.19.2
 typing-inspection==0.4.2
 typing_extensions==4.15.0
@@ -134,10 +144,3 @@ weasel==0.4.1
 webrtcvad==2.0.10
 wordcloud==1.9.4
 wrapt==1.17.3
-
-torch==2.8.0
-openai-whisper==20250625
-transformers==4.51.0
-sentence-transformers==5.1.1
-nltk==3.9.2
-textblob==0.19.0

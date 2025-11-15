@@ -8,7 +8,7 @@ import requests
 import zipfile
 
 MODEL_URL = "https://huggingface.co/abbasszahreddine/feedback-classifier-model/blob/main/feedback_classifier.pt"
-TOKENIZER_URL = "YOUR_CLOUD_LINK_TO_tokenizer.zip"
+TOKENIZER_URL = "https://huggingface.co/abbasszahreddine/feedback-classifier-model/blob/main/saved_model.zip"
 
 def download_file(url, dest_path):
     os.makedirs(os.path.dirname(dest_path), exist_ok=True)
