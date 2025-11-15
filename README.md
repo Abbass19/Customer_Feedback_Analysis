@@ -113,7 +113,6 @@ The backend is modular:
 - **UI**: User interface connects to API.  
 
 ![UI](Documentation/UI.PNG)  
-![Project Structure](Documentation/Project_Structure.PNG)  
 
 ---
 
