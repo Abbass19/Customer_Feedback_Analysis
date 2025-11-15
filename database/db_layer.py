@@ -3,15 +3,13 @@ from psycopg2 import sql
 from typing import Optional, Dict, List, Any
 
 
+# Use your Railway DATABASE_URL
+DATABASE_URL = "postgresql://postgres:FJyRZQJJQWmvBkDvrfxeaPVbAFTkUlZF@mainline.proxy.rlwy.net:58355/railway?sslmode=require"
+
 # ----- 1. database connection -----
 def get_connection():
-    return psycopg2.connect(
-        host="localhost",
-        port=5432,
-        database="feedback_db",
-        user="postgres",
-        password="NewPassword2004"
-    )
+    return psycopg2.connect(DATABASE_URL)
+
 
 # ----- 2. Insert function -----
 def db_add_record(feedback_text: str,

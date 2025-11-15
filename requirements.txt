@@ -1,5 +1,7 @@
 aioice==0.10.1
 aiortc==1.14.0
+# Editable install with no version control (Al-Rassoul-Feedback-Classification==0.1)
+-e c:\users\abbass zahreddine\documents\github\al_rassoul_feedback_classification
 altair==5.5.0
 annotated-types==0.7.0
 astroid==4.0.1
@@ -21,7 +23,7 @@ coloredlogs==15.0.1
 confection==0.1.5
 contourpy==1.3.2
 cryptography==46.0.2
--e git+https://github.com/Abbass19/Customer_Feedback_Analysis_2.git@92266e6ed90c99341e572d03a300c5a161c6e02c#egg=CustomerFeedbackAnalysis
+-e git+https://github.com/Abbass19/Customer_Feedback_Analysis_2.git@ed8dff81e5cabd913591d0e8f2e220cc069d9241#egg=CustomerFeedbackAnalysis
 cycler==0.12.1
 cymem==2.0.11
 dill==0.4.0
@@ -89,6 +91,7 @@ pyee==13.0.0
 Pygments==2.19.2
 pylibsrtp==1.0.0
 pylint==4.0.1
+pymongo==4.15.3
 pyOpenSSL==25.3.0
 pyparsing==3.2.5
 pyreadline3==3.5.4
@@ -103,6 +106,7 @@ rpds-py==0.27.1
 safetensors==0.6.2
 scikit-learn==1.6.1
 scipy==1.15.3
+seaborn==0.13.2
 sentence-transformers==5.1.1
 sentencepiece==0.2.1
 shellingham==1.5.4
