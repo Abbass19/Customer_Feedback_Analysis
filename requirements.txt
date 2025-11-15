@@ -1,53 +1,11 @@
-# Core framework
 streamlit==1.50.0
-streamlit-webrtc==0.63.11
-
-# AI/NLP with compatible versions
 torch==2.8.0
-openai-whisper==20240930
 transformers==4.51.0
 sentence-transformers==5.1.1
 spacy==3.8.7
-spacy-legacy==3.0.12
-thinc==8.3.6
-
-# WebRTC dependencies (pinned for compatibility)
-aiortc==1.14.0
-aioice==0.10.1
-webrtcvad==2.0.10
-
-# Audio processing
-pydub==0.25.1
-ffmpeg-python==0.2.0
-soundfile==0.13.1
-
-# Data processing (updated for Python 3.13)
 pandas==2.2.2
 numpy==2.0.2
 scikit-learn==1.6.1
-scipy==1.15.3
-python-dateutil==2.9.0
-regex==2025.9.18
-
-# Visualization
 plotly==6.3.1
-matplotlib==3.10.7
-seaborn==0.13.2
-
-# Database/API
 pymongo==4.15.3
 requests==2.32.5
-
-# Utilities
-typing-extensions==4.15.0
-tqdm==4.67.1
-rich==14.2.0
-cryptography==46.0.2
-certifi==2025.10.5
-
-# Additional packages from your original requirements
-altair==5.5.0
-nltk==3.9.2
-wordcloud==1.9.4
-joblib==1.5.2
-pyarrow==21.0.0
