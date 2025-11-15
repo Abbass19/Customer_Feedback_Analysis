@@ -1,11 +1,41 @@
+# Core Streamlit
 streamlit==1.50.0
+
+# Remove streamlit-webrtc temporarily as it's causing many conflicts
+# streamlit-webrtc==0.63.11
+
+# AI/NML with modern versions
 torch==2.8.0
 transformers==4.51.0
 sentence-transformers==5.1.1
 spacy==3.8.7
-pandas==2.2.2
-numpy==2.0.2
-scikit-learn==1.6.1
-plotly==6.3.1
-pymongo==4.15.3
-requests==2.32.5
+thinc==8.3.6
+
+# Audio processing (simplified)
+openai-whisper==20240930
+pydub==0.25.1
+
+# Data processing with numpy 2.x
+numpy>=2.0.0
+pandas>=2.2.0
+scikit-learn>=1.6.0
+scipy>=1.15.0
+
+# Visualization
+plotly>=6.3.0
+matplotlib>=3.10.0
+seaborn>=0.13.0
+
+# Database
+pymongo>=4.15.0
+requests>=2.32.0
+
+# Essential utilities
+typing-extensions>=4.15.0
+tqdm>=4.67.0
+python-dateutil>=2.9.0
+certifi>=2025.10.0
+
+# NLP utilities
+nltk>=3.9.0
+wordcloud>=1.9.0
