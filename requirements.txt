@@ -1,3 +1,7 @@
+# Full exhaustive requirements (expanded version)
+streamlit==1.50.0
+streamlit-webrtc==0.63.11
+
 aioice==0.10.1
 aiortc==1.14.0
 altair==5.5.0
@@ -26,7 +30,6 @@ cymem==2.0.11
 dill==0.4.0
 dnspython==2.8.0
 et_xmlfile==2.0.0
-ffmpeg-python==0.2.0
 filelock==3.20.0
 flatbuffers==25.9.23
 fonttools==4.60.1
@@ -64,9 +67,11 @@ murmurhash==1.0.13
 narwhals==2.8.0
 networkx==3.4.2
 numba==0.62.1
+numpy>=2.0.0
 onnxruntime==1.23.1
 openpyxl==3.1.5
 packaging==25.0
+pandas==2.3.3
 pillow==11.3.0
 platformdirs==4.5.0
 plotly==6.3.1
@@ -87,8 +92,7 @@ pylint==4.0.1
 pymongo==4.15.3
 pyOpenSSL==25.3.0
 pyparsing==3.2.5
-pyreadline3==3.5.4
-python-dateutil==2.9.0.post0
+python-dateutil==2.9.2
 pytz==2025.2
 PyYAML==6.0.3
 referencing==0.37.0
@@ -97,18 +101,17 @@ requests==2.32.5
 rich==14.2.0
 rpds-py==0.27.1
 safetensors==0.6.2
+scikit-learn==1.6.1
 scipy==1.15.3
 seaborn==0.13.2
 sentencepiece==0.2.1
 shellingham==1.5.4
 six==1.17.0
-sklearn==0.0
 smart_open==7.3.1
 smmap==5.0.2
 soundfile==0.13.1
 spacy-loggers==1.0.5
 srsly==2.5.1
-
 sympy==1.14.0
 tenacity==9.1.2
 thinc==8.3.6
@@ -132,39 +135,9 @@ webrtcvad==2.0.10
 wordcloud==1.9.4
 wrapt==1.17.3
 
-
-streamlit==1.50.0
-streamlit-webrtc==0.63.11
-
 torch==2.8.0
 openai-whisper==20250625
-
-numpy>=2.0.0
-pandas==2.3.3
-scikit-learn==1.6.1
-
 transformers==4.51.0
 sentence-transformers==5.1.1
-
 nltk==3.9.2
-spacy==3.8.7
-spacy-legacy==3.0.12
 textblob==0.19.0
-
-ffmpeg-python==0.2.0
-pydub==0.25.1
-webrtcvad==2.0.10
-soundfile==0.13.1
-
-matplotlib==3.10.7
-plotly==6.3.1
-seaborn==0.13.2
-
-jupyter-dash==0.4.2
-
-python-dateutil==2.9.2
-regex==2025.9.18
-cryptography==46.0.2
-urllib3==2.5.0
-certifi==2025.10.5
-# (Add any other necessary core libs your app uses)
