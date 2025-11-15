@@ -51,3 +51,5 @@ dnnl.lib
 
 # Ignore the huge classification model folder
 models/Classification_Model/BERT_MultiHead_Classifier/Classification/
+
+~$*.docx
